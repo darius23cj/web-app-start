@@ -19,17 +19,12 @@ public class CRUDOperations {
     public static void main(String[] args) {
         System.out.println("Hello database users! We are going to call DB from Java");
         try {
-//            demo CRUD operations
-//            writeShoppingItem(Product);
             getShoppingItems();
-//            getLinksForPerson("darius");
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     public static void writeShoppingItem(Product product) throws SQLException, ClassNotFoundException {
@@ -105,7 +100,6 @@ public class CRUDOperations {
             // 4. execute a query
             PreparedStatement pSt = conn.prepareStatement("DELETE from shoppingItem1 where id = ?");
             pSt.setInt(1, id);
-
             pSt.executeUpdate();
 
             // 6. close the objects
@@ -115,7 +109,6 @@ public class CRUDOperations {
             e.printStackTrace();
         }
     }
-
 
     public static List<String> getAllPersons() {
 
@@ -205,7 +198,6 @@ public class CRUDOperations {
         for (Product comanda : comenzi) {
             //iterez comenzi
             String urlProdus = comanda.getNume();
-
             System.out.println("urlProdus: " + urlProdus);
 
             //obtin pret
@@ -213,7 +205,6 @@ public class CRUDOperations {
                 String pret = Jsoup.connect(urlProdus)
                         .get().getElementById("prodPrice").getElementById("price1").text();
 
-                //inmultesc cu cantitatea
                 int cantitate = comanda.getCantitate();
 
                 //pt fiecare comanda ++total;
@@ -224,14 +215,14 @@ public class CRUDOperations {
             }
         }
 
-        //listezi person si total
+        //listez person si total
         System.out.println("Pt" + person + " comanda total = " + total);
         return total;
     }
 
     private static double convertPrice(String priceStr) {
         priceStr = priceStr.replace("lei", "").replace(".", "").replace(",", ".").trim();
-        priceStr = priceStr.substring(0, priceStr.length()-1);
+        priceStr = priceStr.substring(0, priceStr.length() - 1);
         return Double.parseDouble(priceStr);
     }
 }

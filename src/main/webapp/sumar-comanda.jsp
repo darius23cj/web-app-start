@@ -24,13 +24,9 @@
 
 </div>
 
-<!--<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>-->
 <script src="js/lib/jquery/jquery-2.1.3.js"></script>
-
-<!--<script src="js/functions.js" type="text/javascript"></script>-->
 <script src="js/code-examples/functions-jquery.js" type="text/javascript"></script>
 <script src="js/code-examples/contacts.js" type="text/javascript"></script>
-
 <script src="js/responsive.js" type="text/javascript"></script>
 <script src="js/sumar.js"></script>
 

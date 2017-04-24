@@ -1,4 +1,4 @@
-CREATE TABLE shoppingItem2 (
+CREATE TABLE shoppingIte1 (
     id bigserial NOT NULL PRIMARY KEY,
     nume character(500),
     cantitate int,
@@ -8,9 +8,3 @@ CREATE TABLE shoppingItem2 (
 );
 
 select (nume,cantitate) from shoppingitem1 where persoana='darius'
-
-INSERT INTO sometable( nume, cantitate, ) VALUES
-('pomelo', 4),
-('mandarina', 5),
-('portocala', 4),
-('clementina', 2);

@@ -41,14 +41,6 @@ public class ShoppingListServlet extends HttpServlet {
         }
     }
 
-    private static double convertPrice(String ikeaPrice) {
-        String ikeaPriceWithoutSpacesAtStartOrEnd = ikeaPrice.trim();
-        String justTheIkeaPriceWithoutCurrency = ikeaPriceWithoutSpacesAtStartOrEnd.split(" ")[0];
-        String priceWithCommaForFractionalPart = justTheIkeaPriceWithoutCurrency.replace(".","");
-        String aJavaValidDoublePrice = priceWithCommaForFractionalPart.replace(",",".");
-        return Double.parseDouble(aJavaValidDoublePrice);
-    }
-
     private void addAction(HttpServletRequest request, HttpServletResponse response) {
         String produs = request.getParameter("produs").trim();
         String cantitate = request.getParameter("cantitate").trim();
@@ -124,7 +116,6 @@ public class ShoppingListServlet extends HttpServlet {
         returnJsonResponse(response, jsonResponse);
     }
 
-    /**/
     private void returnJsonResponse(HttpServletResponse response, String jsonResponse) {
         response.setContentType("application/json");
         PrintWriter pr = null;

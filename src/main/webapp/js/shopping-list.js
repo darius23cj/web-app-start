@@ -2,7 +2,7 @@ console.info("shopping list init");
 
 function getRow(produs, cantitate, persoana, id) {
     return '<tr>' +
-        '<td>' + produs + '</td>' +
+        '<td><a href="'+produs+'" target="_blank">' + produs + '</a></td>' +
         '<td>' + cantitate + '</td>' +
         '<td>' + persoana + '</td>' +
         '<td><a href="/shoppingList?action=remove&id=' + id + '">x</a></td>' +
